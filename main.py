@@ -36,7 +36,7 @@ def va_respond(voice: str):
         if cmd['cmd'] not in config.VA_CMD_LIST.keys():
             tts.va_speak("Що?")
         else:
-            if cmd['cmd'] in ['find_video', 'find_file', 'search_wikipedia']:
+            if cmd['cmd'] in ['find_video', 'find_files', 'search_wikipedia']:
                 query = filter_cmd(filtered_voice)
                 result = execute_cmd(cmd['cmd'], query)
             elif cmd['cmd'] == 'ask_gpt':

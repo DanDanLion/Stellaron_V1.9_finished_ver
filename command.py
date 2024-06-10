@@ -153,11 +153,13 @@ def open_system_properties_cmd():
         print(f"Помилка при відкриті відомосте про систему: {e}")
 
 def find_file_cmd(query):
-    search_query = " ".join(query.split(" ")[2:])  # Извлекаем запрос из команды
-    if query:
-        pyperclip.copy(search_query)
+    search_query = " ".join(query.split(" ")[2:])
+    print(f"ЗАПРОС: {search_query}")
+    if search_query:
+        result = pyperclip.copy(search_query)
+        print(f"ЗАПРОС: {result}")
         os.startfile('explorer.exe')
-        time.sleep(1)
+        time.sleep(1.0)
         pyautogui.hotkey('ctrl', 'f')
         time.sleep(0.5)
         pyautogui.hotkey('ctrl', 'v')
